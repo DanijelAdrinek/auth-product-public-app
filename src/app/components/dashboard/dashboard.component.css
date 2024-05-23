@@ -1,0 +1,19 @@
+.dashboard {
+  display: flex;
+}
+nav {
+  width: 200px;
+  background: #f8f9fa;
+  padding: 1rem;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  margin-bottom: 1rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
