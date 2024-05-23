@@ -1,0 +1,16 @@
+.productForm {
+    display: flex;
+    flex-direction: column;
+}
+.productForm label {
+  margin-top: 10px;
+}
+
+.productForm input {
+  margin-bottom: 10px;
+}
+
+.productForm button {
+  align-self: flex-end;
+  margin-top: 10px;
+}

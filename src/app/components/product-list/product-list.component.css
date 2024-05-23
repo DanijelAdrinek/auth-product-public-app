@@ -1,0 +1,14 @@
+.product-list {
+    padding: 1rem;
+}
+.product-list ul {
+  list-style: none;
+  padding: 0;
+}
+.product-list ul li {
+  margin-bottom: 1rem;
+}
+.product-list ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
