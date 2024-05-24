@@ -1,0 +1,29 @@
+<button routerLink="/users/new">Add New User</button>
+<div *ngIf="users.length > 0; else noUsers">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Admin</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.isAdmin ? 'Yes' : 'No' }}</td>
+          <td>
+            <button (click)="onEdit(user)">Edit</button>
+            <button (click)="onDelete(user)">Delete</button>
+            <button (click)="promoteToAdmin(user)" *ngIf="!user.isAdmin">Promote to Admin</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noUsers>
+    <p>No users found.</p>
+  </ng-template>
+  
