@@ -1,0 +1,10 @@
+<nav class="navbar" *ngIf="isLoggedIn">
+    <ul>
+        <li><a (click)="logout()">Logout</a></li>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/products">Products</a></li>
+        <li><a routerLink="/products/new">Create Product</a></li>
+        <li><a routerLink="/users">Users</a></li>
+        <li><a routerLink="/users/new">Create User</a></li>
+    </ul>
+</nav>  

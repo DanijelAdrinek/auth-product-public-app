@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   constructor(private afAuth: AngularFireAuth, private router: Router) { }
+
+  isLoggedIn(): boolean {
+    return !this.afAuth.currentUser;
+  }
 
   async login(email: string, password: string): Promise<void> {
     try {
@@ -38,7 +43,7 @@ export class AuthService {
     return localStorage.getItem('jwtToken');
   }
 
-  isAuthenticated(): boolean {
-    return !!this.getToken();
+  isAuthenticated(): Observable<boolean> {
+    return this.afAuth.authState.pipe(map(user => !!user));
   }
 }
