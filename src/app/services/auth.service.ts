@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { map, Observable, switchMap, of } from 'rxjs';
 import { User } from '../models';
-import { User as FirebaseUser } from 'firebase/auth';
+import { User as FirebaseUser, UserCredential } from 'firebase/auth';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -44,6 +44,11 @@ export class AuthService {
     this.clearToken();
     this.router.navigate(['login']);
   }
+
+  register(email: string, password: string): Promise<any> {
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
+  }
+
 
   private setToken(token: string | undefined): void {
     if (token) {
