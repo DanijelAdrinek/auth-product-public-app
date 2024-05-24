@@ -1,0 +1,11 @@
+.navbar ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style-type: none;
+}
+
+.navbar ul li {
+    color: var(--link-color);
+}
+
+.navbar li a:hover { cursor: pointer; }

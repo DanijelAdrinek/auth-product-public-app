@@ -15,5 +15,5 @@ nav ul li {
 }
 nav ul li a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--link-color);
 }
