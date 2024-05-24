@@ -25,6 +25,7 @@ export class AdminGuard implements CanActivate {
               if (userDoc && userDoc.role === 'admin') {
                 return true;
               } else {
+                alert('You do not have permission to access this page.');
                 this.router.navigate(['/dashboard']);
                 return false;
               }
