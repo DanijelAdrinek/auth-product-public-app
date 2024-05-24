@@ -8,10 +8,12 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { AdminGuard } from './guards/admin.guard';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'products', component: ProductListComponent, canActivate: [AuthGuard] },
   { path: 'products/new', component: ProductFormComponent, canActivate: [AdminGuard] },
@@ -20,5 +22,5 @@ export const routes: Routes = [
   { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
   { path: 'users/new', component: UserFormComponent, canActivate: [AdminGuard] },
   { path: 'users/:id', component: UserFormComponent, canActivate: [AuthGuard] },
-  { path: 'users/edit/:id', component: UserFormComponent, canActivate: [AdminGuard] }
+  { path: 'users/edit/:id', component: UserFormComponent, canActivate: [AdminGuard] },
 ];
